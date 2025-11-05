@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Soundboard</title>
+    <style>
+        /* Basic Styling for appearance */
+        .soundboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* Space between buttons */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .sound-button {
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.1s;
+        }
+        .sound-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="soundboard-container">
+        
+        <!-- Button 1: Sound for Success -->
+        <button class="sound-button" onclick="playAudio('link_to_your_success_sound.mp3')">
+            Success Sound
+        </button>
+
+        <!-- Button 2: Sound for Error -->
+        <button class="sound-button" onclick="playAudio('link_to_your_error_sound.wav')">
+            Error Alert
+        </button>
+
+        <!-- Button 3: Sound for Applause -->
+        <button class="sound-button" onclick="playAudio('link_to_your_applause_sound.ogg')">
+            Applause
+        </button>
+
+        <!-- The hidden audio player element -->
+        <audio id="audioPlayer" src=""></audio>
+        
+    </div>
+
+    <script>
+        // JavaScript function to handle audio playback
+        function playAudio(audioFile) {
+            const player = document.getElementById('audioPlayer');
+            
+            // 1. Set the source of the audio file
+            player.src = audioFile;
+            
+            // 2. Load and play the audio
+            player.load(); 
+            player.play().catch(error => {
+                console.error("Audio playback failed:", error);
+                alert("Your browser might be blocking automatic playback. Try clicking again.");
+            });
+        }
+    </script>
+
+</body>
+</html>
