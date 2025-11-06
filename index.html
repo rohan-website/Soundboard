@@ -49,11 +49,11 @@
     }
     
     .error-btn {
-        background-image: url('images/error_icon.png');
+        background-image: url('error-126627.mp3');
     }
     
     .applause-btn {
-        background-image: url('images/applause_icon.png');
+        background-image: url('applause-cheer-236786.mp3');
     }
 </style>
 </head>
@@ -61,26 +61,35 @@
 
     <div class="soundboard-container">
         
-        <!-- Button 1: Sound for Success -->
-        <button class="sound-button" onclick="playAudio('success-340660.mp3')">
-            Success Sound
+        <!-- Button 1: Success Sound -->
+        <button 
+            class="sound-button success-btn" 
+            onclick="playAudio('sounds/success-340660.mp3')"
+        >
+            Success Sound 
         </button>
 
-        <!-- Button 2: Sound for Error -->
-        <button class="sound-button" onclick="playAudio('error-126627.mp3')">
+        <!-- Button 2: Error -->
+        <button 
+            class="sound-button error-btn" 
+            onclick="playAudio('sounds/error-alert.wav')"
+        >
             Error Alert
         </button>
 
-        <!-- Button 3: Sound for Applause -->
-        <button class="sound-button" onclick="playAudio('applause-cheer-236786.mp3')">
+        <!-- Button 3: Applause -->
+        <button 
+            class="sound-button applause-btn" 
+            onclick="playAudio('sounds/applause.ogg')"
+        >
             Applause
         </button>
 
-        <!-- The hidden audio player element -->
+        <!-- The hidden audio player element (JS function remains the same) -->
         <audio id="audioPlayer" src=""></audio>
         
     </div>
-
+    
     <script>
         // JavaScript function to handle audio playback
         function playAudio(audioFile) {
